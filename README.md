@@ -1,1 +1,1 @@
-CRUD SIMPLES DE UMA LISTA DE TAREFAS
+CRUD simples sobre lista de tarefas com Java Spring.
