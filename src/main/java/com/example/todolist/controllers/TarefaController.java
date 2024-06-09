@@ -35,7 +35,7 @@ public class TarefaController {
 
     @PutMapping
     @Transactional
-    public ResponseEntity alterTarefas(@RequestBody @Valid AlterarTarefa data) {
+    public ResponseEntity alterTarefas(@RequestBody @Valid AlterarTarefa data){
         Optional<Tarefa> tarefa = repositorio.findById(data.id());
         if (tarefa.isPresent()) {
             Tarefa tar = tarefa.get();
@@ -60,7 +60,6 @@ public class TarefaController {
     @Transactional
     public ResponseEntity deleteTarefas(@PathVariable Long id) {
         Optional<Tarefa> tarefaOpc = repositorio.findById(id);
-
         if (tarefaOpc.isPresent()) {
             Tarefa tarefa = tarefaOpc.get();
             repositorio.delete(tarefa);
