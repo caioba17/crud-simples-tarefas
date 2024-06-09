@@ -3,6 +3,8 @@ package com.example.todolist.domain.tarefa;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Table(name="tarefa")
 @Entity(name="tarefa")
 @EqualsAndHashCode(of = "id")
@@ -17,11 +19,13 @@ public class Tarefa {
     private String descricao;
     private Boolean feito;
     private String tipo;
+    private LocalDateTime tempo;
 
     public Tarefa(RequisitarTarefa data) {
         this.descricao = data.descricao();
         this.feito = false;
         this.tipo = data.tipo();
+        this.tempo = LocalDateTime.now();
     }
 
 }
